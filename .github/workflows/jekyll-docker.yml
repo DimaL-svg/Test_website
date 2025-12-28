@@ -1,14 +1,23 @@
-name: Проверка PHP кода 🐘 (Windows)
+name: Проверка PHP кода 🐘 (Windows XAMPP)
+
 on: [push]
+
 jobs:
   check-syntax:
     runs-on: self-hosted
+
     steps:
       - name: Скачиваем код (Checkout)
         uses: actions/checkout@v3
+
       - name: Проверка синтаксиса
         run: |
+          # Указываем путь к твоему PHP
+          $phpPath = "C:\xampp\php\php.exe"
+
+          # Ищем все .php файлы и проверяем их
           Get-ChildItem -Recurse -Filter "*.php" | ForEach-Object { 
             Write-Host "Проверяю файл: $($_.Name)"
-            & php -l $_.FullName 
+            # Значок '&' запускает программу по указанному пути
+            & $phpPath -l $_.FullName 
           }
