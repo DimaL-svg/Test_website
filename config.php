@@ -1,6 +1,6 @@
-<?php
+<?ph
 $host = 'localhost';
-$dbname = 'lab14_db';  
+$dbname = 'lab14_db'  
 $user = 'root';
 $pass = ''; 
 
