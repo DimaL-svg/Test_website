@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #welcome {
     background-color: #f5f5f5;
     padding: 40px;
@@ -5,4 +6,12 @@
 }
 #welcome h1 {
     color: #333;
+=======
+#explain {
+    background-color: #e0e0e0;
+    padding: 30px;
+}
+#explain h2 {
+    color: #555;
+>>>>>>> feature/explain
 }
