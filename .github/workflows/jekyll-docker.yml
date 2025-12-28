@@ -1,16 +1,14 @@
-name: Проверка PHP кода 🐘
+name: Проверка PHP кода 🐘 (Windows)
 on: [push]
-
 jobs:
   check-syntax:
-    runs-on: ubuntu-latest
-
+    runs-on: self-hosted
     steps:
       - name: Скачиваем код (Checkout)
         uses: actions/checkout@v3
-      - name: Установка PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.1' 
       - name: Проверка синтаксиса
-        run: find . -name "*.php" ! -path "./vendor/*" -exec php -l {} \;
+        run: |
+          Get-ChildItem -Recurse -Filter "*.php" | ForEach-Object { 
+            Write-Host "Проверяю файл: $($_.Name)"
+            & php -l $_.FullName 
+          }
