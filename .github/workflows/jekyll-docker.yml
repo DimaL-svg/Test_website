@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   check-syntax:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Скачиваем код (Checkout)
